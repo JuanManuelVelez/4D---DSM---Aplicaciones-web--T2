@@ -14,8 +14,8 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(PaqueteNoValidoException.class)
-    public ResponseEntity<Map<String, Object>> handlePaqueteNoValido(PaqueteNoValidoException ex) {
+    @ExceptionHandler(ReglaNegocioException.class)
+    public ResponseEntity<Map<String, Object>> handleReglaNegocio(ReglaNegocioException ex) {
         Map<String, Object> error = new HashMap<>();
         error.put("mensaje", ex.getMessage());
         error.put("codigo", HttpStatus.BAD_REQUEST.value());
